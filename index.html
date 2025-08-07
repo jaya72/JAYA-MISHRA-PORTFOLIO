@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaya Mishra - AI Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F7F4;
+            color: #2c3e50;
+        }
+        .accent-color { color: #4A6C6F; }
+        .bg-accent-color { background-color: #4A6C6F; }
+        .border-accent-color { border-color: #4A6C6F; }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #F8F7F4;
+            border: 3px solid #4A6C6F;
+            left: -0.5rem;
+            top: 0;
+            z-index: 10;
+        }
+        .nav-link.active {
+            color: #4A6C6F;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="home" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <a href="#home" class="hover:text-gray-700">Jaya Mishra</a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#summary" class="nav-link text-gray-600 hover:accent-color transition-colors duration-300">Summary</a>
+                <a href="#projects" class="nav-link text-gray-600 hover:accent-color transition-colors duration-300">Projects</a>
+                <a href="#experience" class="nav-link text-gray-600 hover:accent-color transition-colors duration-300">Experience</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#summary" class="block py-2 text-gray-600 hover:accent-color">Summary</a>
+            <a href="#projects" class="block py-2 text-gray-600 hover:accent-color">Projects</a>
+            <a href="#experience" class="block py-2 text-gray-600 hover:accent-color">Experience</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="summary" class="mb-24 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">AI Engineer & Analyst</h1>
+            <p class="max-w-3xl mx-auto text-lg text-gray-700">
+                Results-driven AI Engineer with a strong background in technical troubleshooting and complex problem resolution. Proven ability to design and implement context-aware, intelligent solutions using OpenAI Embeddings API and RAG pipelines. Seeking to leverage a strong foundation in system analysis, data interpretation, and agile methodologies to build production-ready AI systems. Passionate about transforming cutting-edge research into practical solutions for meaningful problems.
+            </p>
+            <div class="mt-8 flex flex-col items-center space-y-4">
+                <button id="contact-button" class="bg-accent-color text-white px-6 py-2 rounded-full hover:opacity-90 transition-opacity">Contact Me</button>
+                <div id="contact-details" class="hidden text-center mt-4 p-4 bg-white rounded-lg shadow-md border border-gray-200">
+                    <p class="font-bold text-lg mb-2">My Contact Information</p>
+                    <p><strong>Phone:</strong> +1 (619) 540-2404</p>
+                    <p><strong>Email:</strong> jayamishra759@gmail.com</p>
+                </div>
+                <a href="https://www.linkedin.com/in/jaya-mishra-techie" target="_blank" class="border-2 border-accent-color text-accent-color px-6 py-2 rounded-full hover:bg-accent-color hover:text-white transition-colors">LinkedIn</a>
+            </div>
+        </section>
+
+        <section id="projects" class="mb-24">
+            <h2 class="text-3xl font-bold text-center mb-2">Key Project</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">A key project demonstrating my ability to build end-to-end AI solutions from concept to deployment.</p>
+            <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-8 border border-gray-200">
+                <h3 class="text-2xl font-bold mb-2">Solution Finder</h3>
+                <p class="text-gray-500 mb-4">Self-initiated | 2025</p>
+                <p class="text-gray-700 mb-6">
+                    Developed an AI-powered web application using a RAG pipeline to provide context-aware answers from the Bhagavad Gita. The system leverages Natural Language Understanding (NLU), keyword matching, and semantic search for intelligent and dynamic responses. Implemented a local LLM integration using Transformer.js and Ollama, with a backend built on Node.js and Python.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">React.js</span>
+                    <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Node.js</span>
+                    <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                    <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">RAG</span>
+                    <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">LLMs</span>
+                    <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">CromaDB</span>
+                    <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Vercel</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="mb-24">
+            <h2 class="text-3xl font-bold text-center mb-2">Professional Experience</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">My professional journey, highlighting my transition into data analysis and AI. Click each role to see the details.</p>
+            <div class="relative max-w-2xl mx-auto border-l-2 border-gray-200 pl-10">
+                
+                <div class="mb-10 timeline-item">
+                    <h3 class="text-xl font-bold cursor-pointer timeline-title">AI/ML Engineer & Analyst</h3>
+                    <p class="text-gray-500 mb-2">FedEx (Atos Syntel) | 2021-2024</p>
+                    <div class="timeline-details text-gray-700 space-y-2">
+                        <p>Performed root cause analysis and debugging of applications running on AWS.</p>
+                        <p>Monitored ETL data pipelines built with AWS Glue, and conducted data analysis using pivot tables and charts to derive business insights.</p>
+                        <p>Provided technical support and troubleshooting for the IRIS application, resolving issues related to web functionality, login, and data corruption.</p>
+                        <p>Conducted regression testing and collaborated with cross-functional teams to resolve complex technical issues.</p>
+                        <p class="italic text-gray-600 pt-2">This experience in data-driven troubleshooting and pipeline management is directly relevant to debugging and monitoring AI models and data feeds.</p>
+                    </div>
+                </div>
+
+                <div class="mb-10 timeline-item">
+                    <h3 class="text-xl font-bold cursor-pointer timeline-title">Technical Support Engineer</h3>
+                    <p class="text-gray-500 mb-2">Telefoncia (Atos India) | 2018-2021</p>
+                    <div class="timeline-details hidden text-gray-700 space-y-2">
+                        <p>Provided end-to-end technical support for Mobile Number Portability (MNP) dashboards, identifying and troubleshooting mobile number management issues.</p>
+                        <p>Collaborated with customers to resolve issues, ensuring smooth incident management using JIRA and Remedy.</p>
+                        <p>Monitored Oracle GoldenGate servers for seamless data replication, troubleshooting issues and escalating complex cases as needed.</p>
+                        <p>Conducted root cause analysis using Splunk and ensured rapid resolution of issues within SLAs, while also monitoring CPU utilization with Kibana.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-600">
+            <p>&copy; 2025 Jaya Mishra. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Built with passion and code.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            const timelineTitles = document.querySelectorAll('.timeline-title');
+            timelineTitles.forEach(title => {
+                title.addEventListener('click', () => {
+                    const details = title.nextElementSibling.nextElementSibling;
+                    details.classList.toggle('hidden');
+                });
+            });
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 60) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            const contactButton = document.getElementById('contact-button');
+            const contactDetails = document.getElementById('contact-details');
+            contactButton.addEventListener('click', () => {
+                contactDetails.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
