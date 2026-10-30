@@ -1,187 +1,112 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaya Mishra - AI Engineer Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-  
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F8F7F4;
-            color: #2c3e50;
-        }
-        .accent-color { color: #4A6C6F; }
-        .bg-accent-color { background-color: #4A6C6F; }
-        .border-accent-color { border-color: #4A6C6F; }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            background-color: #F8F7F4;
-            border: 3px solid #4A6C6F;
-            left: -0.5rem;
-            top: 0;
-            z-index: 10;
-        }
-        .nav-link.active {
-            color: #4A6C6F;
-            font-weight: 700;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jaya Mishra — Data Engineer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+:root{--bg:#f7f8fb;--surface:#fff;--text:#121826;--muted:#5b6475;--line:#e3e6ee;--accent:#4f46e5;--accent2:#0ea5e9;--chip:#eef0ff;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1020;--surface:#131a2e;--text:#eef1f8;--muted:#9aa4bb;--line:#232c47;--accent:#8b87ff;--accent2:#38bdf8;--chip:#1b2347;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b1020;--surface:#131a2e;--text:#eef1f8;--muted:#9aa4bb;--line:#232c47;--accent:#8b87ff;--accent2:#38bdf8;--chip:#1b2347;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.15;margin:0}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+nav b{font-family:"Space Grotesk",sans-serif}
+nav .links{display:flex;gap:18px;font-size:14px;color:var(--muted);overflow-x:auto}
+nav .links a:hover{color:var(--accent)}
+.hero{padding:84px 0 60px}
+.tag{display:inline-block;font-size:13px;color:var(--accent);background:var(--chip);padding:5px 12px;border-radius:99px;font-weight:600}
+h1{font-size:clamp(38px,7vw,68px);margin:18px 0 14px;letter-spacing:-.02em}
+h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:18px;color:var(--muted);max-width:700px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{padding:12px 22px;border-radius:12px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--surface)}
+.btn.p{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:44px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+.stat b{display:block;font:700 30px "Space Grotesk",sans-serif;color:var(--accent)}
+.stat span{font-size:13px;color:var(--muted)}
+section{padding:56px 0}
+h2{font-size:30px;margin-bottom:26px}
+h2::after{content:"";display:block;width:44px;height:4px;border-radius:4px;margin-top:10px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card h3{font-size:17px;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:13px;background:var(--chip);color:var(--text);padding:5px 11px;border-radius:99px;border:1px solid var(--line)}
+.job{display:grid;grid-template-columns:160px 1fr;gap:24px;padding:26px 0;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:0}
+.when{color:var(--muted);font-size:14px}
+.job h3{font-size:21px}.job .co{color:var(--accent);font-weight:600;margin:2px 0 12px}
+.job ul{margin:0;padding-left:20px;color:var(--muted)}.job li{margin-bottom:8px}
+.job li::marker{color:var(--accent)}
+@media(max-width:640px){.job{grid-template-columns:1fr;gap:6px}.hero{padding-top:56px}}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.contact{text-align:center}
+.contact p{color:var(--muted);max-width:520px;margin:0 auto 22px}
+footer{padding:28px 0;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+</style>
 </head>
-<body class="antialiased">
+<body>
+<nav><div class="wrap"><b>JM.</b><div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a></div></div></nav>
 
-    <header id="home" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold">
-                <a href="#home" class="hover:text-gray-700">Jaya Mishra</a>
-            </div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#summary" class="nav-link text-gray-600 hover:accent-color transition-colors duration-300">Summary</a>
-                <a href="#projects" class="nav-link text-gray-600 hover:accent-color transition-colors duration-300">Projects</a>
-                <a href="#experience" class="nav-link text-gray-600 hover:accent-color transition-colors duration-300">Experience</a>
-            </div>
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </div>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#summary" class="block py-2 text-gray-600 hover:accent-color">Summary</a>
-            <a href="#projects" class="block py-2 text-gray-600 hover:accent-color">Projects</a>
-            <a href="#experience" class="block py-2 text-gray-600 hover:accent-color">Experience</a>
-        </div>
-    </header>
+<header class="hero"><div class="wrap">
+<span class="tag">Open to new opportunities · Redmond, WA</span>
+<h1>Hi, I’m <span>Jaya Mishra</span><br>Data Engineer</h1>
+<p class="lead">I build reliable data pipelines, trustworthy analytics, and practical AI/ML prototypes — turning raw operational data into decisions that teams can act on.</p>
+<div class="cta"><a class="btn p" href="#experience">View experience</a><a class="btn" href="mailto:jayamishra759@gmail.com">Get in touch</a></div>
+<div class="stats">
+<div class="stat"><b>5+</b><span>Years in data engineering &amp; operations</span></div>
+<div class="stat"><b>99%+</b><span>Data accuracy across reporting pipelines</span></div>
+<div class="stat"><b>2</b><span>Enterprise environments: FedEx &amp; Telefónica</span></div>
+<div class="stat"><b>Fabric</b><span>Microsoft Fabric analytics certified learning</span></div>
+</div></div></header>
 
-    <main class="container mx-auto px-6 py-12">
+<section id="about"><div class="wrap"><h2>About</h2>
+<div class="card"><p style="margin:0;color:var(--muted)">I’m a data engineer with more than five years of experience in data platform operations, API integrations, and enterprise reporting. I write Python and SQL for data extraction, pipeline validation, and data quality auditing across multi-system environments. I enjoy partnering with cross-functional teams to design AI/ML proofs of concept, set up data governance practices, and shape raw operational logs into analytics models people can trust.</p></div></div></section>
 
-        <section id="summary" class="mb-24 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">AI Engineer & Analyst</h1>
-            <p class="max-w-3xl mx-auto text-lg text-gray-700">
-                Results-driven AI Engineer with a strong background in technical troubleshooting and complex problem resolution. Proven ability to design and implement context-aware, intelligent solutions using OpenAI Embeddings API and RAG pipelines. Seeking to leverage a strong foundation in system analysis, data interpretation, and agile methodologies to build production-ready AI systems. Passionate about transforming cutting-edge research into practical solutions for meaningful problems.
-            </p>
-            <div class="mt-8 flex flex-col items-center space-y-4">
-                <button id="contact-button" class="bg-accent-color text-white px-6 py-2 rounded-full hover:opacity-90 transition-opacity">Contact Me</button>
-                <div id="contact-details" class="hidden text-center mt-4 p-4 bg-white rounded-lg shadow-md border border-gray-200">
-                    <p class="font-bold text-lg mb-2">My Contact Information</p>
-                    <p><strong>Phone:</strong> +1 (619) 540-2404</p>
-                    <p><strong>Email:</strong> jayamishra759@gmail.com</p>
-                </div>
-                <a href="https://www.linkedin.com/in/jaya-mishra-techie" target="_blank" class="border-2 border-accent-color text-accent-color px-6 py-2 rounded-full hover:bg-accent-color hover:text-white transition-colors">LinkedIn</a>
-            </div>
-        </section>
+<section id="skills"><div class="wrap"><h2>Skills</h2>
+<div class="grid">
+<div class="card"><h3>Data Engineering</h3><div class="chips"><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">ETL/ELT</span><span class="chip">Pipeline Architecture</span><span class="chip">Data Transformation</span><span class="chip">Star Schema Modeling</span><span class="chip">Data Validation</span><span class="chip">Data Quality Auditing</span><span class="chip">REST APIs</span></div></div>
+<div class="card"><h3>Microsoft Fabric &amp; Analytics</h3><div class="chips"><span class="chip">Microsoft Fabric</span><span class="chip">Data Factory</span><span class="chip">OneLake</span><span class="chip">Lakehouse</span><span class="chip">Data Pipelines</span><span class="chip">Notebooks</span><span class="chip">PySpark</span><span class="chip">Dataflows Gen2</span><span class="chip">Power BI</span></div></div>
+<div class="card"><h3>AI &amp; Generative AI</h3><div class="chips"><span class="chip">Generative AI Integrations</span><span class="chip">AI/ML PoCs</span><span class="chip">OpenAI API</span><span class="chip">Claude API</span><span class="chip">Prompt Engineering</span><span class="chip">MLOps Concepts</span><span class="chip">AI Governance</span></div></div>
+<div class="card"><h3>Business Intelligence</h3><div class="chips"><span class="chip">Power BI</span><span class="chip">Advanced Excel</span><span class="chip">Power Pivot</span><span class="chip">KPI Development</span><span class="chip">Operational Analytics</span><span class="chip">Data-Driven Reporting</span></div></div>
+<div class="card"><h3>Cloud &amp; Platforms</h3><div class="chips"><span class="chip">AWS</span><span class="chip">GCP (learning)</span><span class="chip">Cloud Fundamentals</span><span class="chip">Enterprise Data Platforms</span></div></div>
+<div class="card"><h3>Development &amp; Operations</h3><div class="chips"><span class="chip">Git &amp; GitHub</span><span class="chip">Cursor</span><span class="chip">GitHub Copilot</span><span class="chip">Splunk</span><span class="chip">Kibana</span><span class="chip">Root Cause Analysis</span><span class="chip">Incident Management</span><span class="chip">Stakeholder Collaboration</span></div></div>
+</div></div></section>
 
-        <section id="projects" class="mb-24">
-            <h2 class="text-3xl font-bold text-center mb-2">Key Project</h2>
-            <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">A key project demonstrating my ability to build end-to-end AI solutions from concept to deployment.</p>
-            <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-8 border border-gray-200">
-                <h3 class="text-2xl font-bold mb-2">Solution Finder</h3>
-                <p class="text-gray-500 mb-4">Self-initiated | 2025</p>
-                <p class="text-gray-700 mb-6">
-                    Developed an AI-powered web application using a RAG pipeline to provide context-aware answers from the Bhagavad Gita. The system leverages Natural Language Understanding (NLU), keyword matching, and semantic search for intelligent and dynamic responses. Implemented a local LLM integration using Transformer.js and Ollama, with a backend built on Node.js and Python.
-                </p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">React.js</span>
-                    <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Node.js</span>
-                    <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
-                    <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">RAG</span>
-                    <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">LLMs</span>
-                    <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">CromaDB</span>
-                    <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Vercel</span>
-                </div>
-            </div>
-        </section>
+<section id="experience"><div class="wrap"><h2>Experience</h2>
+<div class="card">
+<div class="job"><div class="when">06/2021 – 03/2024<br>Bangalore, India</div><div><h3>Data Engineer</h3><div class="co">FedEx (Atos Syntel)</div><ul>
+<li>Engineered ETL/ELT pipelines in Python and SQL to aggregate multi-system operational logs and telemetry (shipment volumes, transit delays, hub metrics) into a centralized Star Schema warehouse layer, optimizing query performance for executive Power BI dashboards.</li>
+<li>Built automated validation and auditing workflows with Pandas and SQL to catch schema drift, record-count variances, and null anomalies, ensuring 99%+ data accuracy.</li>
+<li>Created preprocessing and feature engineering pipelines that turn raw operational data into structured training data for predictive AI/ML models.</li>
+<li>Integrated LLM REST APIs (OpenAI and Claude) with custom prompt engineering to build workflow prototypes that reduced manual data triage time.</li>
+<li>Applied MLOps and data governance practices: validating training datasets, tracking pipeline dependencies, and enforcing data quality standards.</li>
+<li>Designed low-latency KPI schemas powering real-time tracking of on-time delivery percentages and package exception rates.</li>
+<li>Translated complex business logic from product owners and operations teams into technical specifications, data requirements, and dbt/SQL transformation rules.</li></ul></div></div>
+<div class="job"><div class="when">10/2018 – 05/2021<br>Bangalore, India</div><div><h3>Data Operations Engineer</h3><div class="co">Telefónica (Atos India)</div><ul>
+<li>Engineered log aggregation and monitoring queries in SQL, Splunk, and Kibana to parse, filter, and analyze log streams across enterprise telecom platforms.</li>
+<li>Automated repetitive support workflows with rule-based automation and chatbot logic for common account tasks such as plan migrations, mobile activations, and password resets.</li>
+<li>Monitored data integrity and system health, performing root-cause analysis on recurring incidents and pipeline failures.</li>
+<li>Configured and troubleshot REST API integrations, resolving SSO, OAuth, and endpoint data exchange issues.</li>
+<li>Built reports and dashboards tracking SLA performance, system uptime, and incident trends for engineering and operations stakeholders.</li>
+<li>Wrote runbooks, API integration guides, and data flow documentation to standardize incident response and onboarding.</li></ul></div></div>
+</div></div></section>
 
-        <section id="experience" class="mb-24">
-            <h2 class="text-3xl font-bold text-center mb-2">Professional Experience</h2>
-            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">My professional journey, highlighting my transition into data analysis and AI. Click each role to see the details.</p>
-            <div class="relative max-w-2xl mx-auto border-l-2 border-gray-200 pl-10">
-                
-                <div class="mb-10 timeline-item">
-                    <h3 class="text-xl font-bold cursor-pointer timeline-title">AI/ML Engineer & Analyst</h3>
-                    <p class="text-gray-500 mb-2">FedEx (Atos Syntel) | 2021-2024</p>
-                    <div class="timeline-details text-gray-700 space-y-2">
-                        <p>Performed root cause analysis and debugging of applications running on AWS.</p>
-                        <p>Monitored ETL data pipelines built with AWS Glue, and conducted data analysis using pivot tables and charts to derive business insights.</p>
-                        <p>Provided technical support and troubleshooting for the IRIS application, resolving issues related to web functionality, login, and data corruption.</p>
-                        <p>Conducted regression testing and collaborated with cross-functional teams to resolve complex technical issues.</p>
-                        <p class="italic text-gray-600 pt-2">This experience in data-driven troubleshooting and pipeline management is directly relevant to debugging and monitoring AI models and data feeds.</p>
-                    </div>
-                </div>
+<section id="education"><div class="wrap"><h2>Education &amp; Certifications</h2>
+<div class="two">
+<div class="card"><h3>BE, Computer Science</h3><p style="margin:0;color:var(--muted)">Mumbai University · 2018</p></div>
+<div class="card"><h3>Certifications</h3><p style="margin:0 0 8px;color:var(--muted)">Introduction to End-to-End Analytics Using Microsoft Fabric — Microsoft Learn</p><p style="margin:0;color:var(--muted)">Generative AI for Data Engineering and Data Professionals — Udemy</p></div>
+</div></div></section>
 
-                <div class="mb-10 timeline-item">
-                    <h3 class="text-xl font-bold cursor-pointer timeline-title">Technical Support Engineer</h3>
-                    <p class="text-gray-500 mb-2">Telefoncia (Atos India) | 2018-2021</p>
-                    <div class="timeline-details hidden text-gray-700 space-y-2">
-                        <p>Provided end-to-end technical support for Mobile Number Portability (MNP) dashboards, identifying and troubleshooting mobile number management issues.</p>
-                        <p>Collaborated with customers to resolve issues, ensuring smooth incident management using JIRA and Remedy.</p>
-                        <p>Monitored Oracle GoldenGate servers for seamless data replication, troubleshooting issues and escalating complex cases as needed.</p>
-                        <p>Conducted root cause analysis using Splunk and ensured rapid resolution of issues within SLAs, while also monitoring CPU utilization with Kibana.</p>
-                    </div>
-                </div>
+<section id="contact"><div class="wrap"><div class="card contact"><h2 style="margin-bottom:12px">Let’s work together</h2><p>Looking for a data engineer who cares about data quality and clear communication? I’d love to hear from you.</p><a class="btn p" href="mailto:jayamishra759@gmail.com">jayamishra759@gmail.com</a></div></div></section>
 
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-white border-t">
-        <div class="container mx-auto px-6 py-8 text-center text-gray-600">
-            <p>&copy; 2025 Jaya Mishra. All Rights Reserved.</p>
-            <p class="text-sm mt-2">Built with passion and code.</p>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            const timelineTitles = document.querySelectorAll('.timeline-title');
-            timelineTitles.forEach(title => {
-                title.addEventListener('click', () => {
-                    const details = title.nextElementSibling.nextElementSibling;
-                    details.classList.toggle('hidden');
-                });
-            });
-
-            const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('section');
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 60) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').includes(current)) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-
-            const contactButton = document.getElementById('contact-button');
-            const contactDetails = document.getElementById('contact-details');
-            contactButton.addEventListener('click', () => {
-                contactDetails.classList.toggle('hidden');
-            });
-        });
-    </script>
+<footer>© 2026 Jaya Mishra · Redmond, WA</footer>
 </body>
 </html>
